@@ -45,6 +45,26 @@
                 <input type="text" name="kode_transaksi" class="form-control" placeholder="kode_transaksi" required>
             </div>
         </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>produk</strong>
+                <select  name="prod_id" class="form-control" id="" required>
+                    <option value="">-- Pilih --</option>
+                    @foreach ($prod as $cus)
+                        <option value="{{ $cus->id }}">{{ $cus->produk }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>jumlah</strong>
+                <input type="number" min=1 name="jumlah" class="form-control" placeholder="jumlah" required>
+            </div>
+        </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>

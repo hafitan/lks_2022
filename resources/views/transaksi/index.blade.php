@@ -24,8 +24,11 @@
             <tr>
                 <th scope="col">no</th>
                 <th scope="col">customer</th>
-                <th scope="col">tanggal</th>
                 <th scope="col">kode transaksi</th>
+                <th scope="col">jumlah</th>
+                <th scope="col">harga</th>
+                <th scope="col">produk</th>
+                <th scope="col">tanggal</th>
                 <th scope="col">opsi</th>
             </tr>
             </thead>
@@ -35,17 +38,21 @@
                 <tr>
                     <td>{{ ++$i }}</td>
                     <td>{{ $tran->customer_id }}</td>
-                    <td>{{ $tran->tanggal }}</td>
                     <td>{{ $tran->kode_transaksi }}</td>
+                    <td>{{ $tran->jumlah }}</td>
+                    <td>{{ $tran->harga }}</td>
+                    <td>{{ $tran->produk }}</td>
+                    <td>{{ $tran->tanggal }}</td>
                     <td>
                         <form action="{{ route('transaksi.destroy',$tran->id) }}" method="POST">
-
-                            <a class="btn btn-primary" href="{{ route('transaksi.edit',$tran->id) }}">Edit</a>
+                            {{-- <a href="{{ route('transaksi.show') }}" class="btn btn-primary">detail</a> --}}
+                            {{-- <a class="btn btn-primary" href="{{ route('transaksi.edit',$tran->id) }}">Edit</a> --}}
 
                             @csrf
                             @method('DELETE')
 
                             <button type="submit" class="btn btn-danger" onclick="return confirm('mau hapus {{ $tran->customer_id }}')">Delete</button>
+
                         </form>
                     </td>
                 </tr>

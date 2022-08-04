@@ -37,7 +37,7 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         Kategori::create([
-            'nama_kategori' => $request->nama_kategori
+            'kategori' => $request->kategori
         ]);
         return redirect()->route('kategori.index')->with('success', 'berhasil menambahkan');
     }
@@ -74,7 +74,7 @@ class KategoriController extends Controller
     public function update(Request $request, Kategori $kategori)
     {
         $request->validate([
-            'nama_kategori' => 'required'
+            'kategori' => 'required'
         ]);
         $kategori->update($request->all());
         return redirect()->route('kategori.index')->with('success', 'berhasil mengubah data');

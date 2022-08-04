@@ -26,19 +26,22 @@
                     <th scope="col">nama produk</th>
                     <th scope="col">kategori</th>
                     <th scope="col">deskripsi</th>
+                    <th scope="col">jumlah</th>
                     <th scope="col">harga</th>
                     <th scope="col">gambar</th>
                     <th scope="col">opsi</th>
                 </tr>
                 </thead>
                 <tbody>
+                    {{-- dd($pro->gambar) --}}
                     <?php $i = 0; ?>
                     @foreach ($produk as $pro)
                     <tr>
                         <td>{{ ++$i }}</td>
-                        <td>{{ $pro->nama_produk }}</td>
-                        <td>{{ $pro->kategori_id }}</td>
+                        <td>{{ $pro->produk }}</td>
+                        <td>{{ $pro->kategori }}</td>
                         <td>{{ $pro->deskripsi }}</td>
+                        <td>{{ $pro->jumlah }}</td>
                         <td>{{ $pro->harga }}</td>
                         <td><img src="{{asset('public/image/'.$pro->gambar)}}" style="max-height: 150px; max-width: 150px;" ></td>
                         <td>
@@ -49,7 +52,7 @@
                                 @csrf
                                 @method('DELETE')
 
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('mau hapus {{ $pro->nama_produk }}')">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('mau hapus {{ $pro->name }} ?')">Delete</button>
                             </form>
                         </td>
                     </tr>

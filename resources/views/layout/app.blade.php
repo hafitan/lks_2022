@@ -66,21 +66,21 @@
             <i class="fas fa-fw fa-cog"></i>
             Transaksi
         </a>
-        <a class="nav-link collapsed" href="{{ url('transaksiDetail') }}"  aria-expanded="true" >
+        {{-- <a class="nav-link collapsed" href="{{ url('transaksiDetail') }}"  aria-expanded="true" >
             <i class="fas fa-fw fa-cog"></i>
             Transaksi Detail
-        </a>
+        </a> --}}
         <a class="nav-link collapsed" href="{{ url('customer') }}"  aria-expanded="true" >
             <i class="fas fa-fw fa-cog"></i>
             Customer
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{ url('kategori') }}">kategori</a>
+            {{-- <a class="collapse-item" href="{{ url('kategori') }}">kategori</a>
             <a class="collapse-item" href="{{ url('produk') }}">produk</a>
             <a class="collapse-item" href="{{ url('transaksi') }}">transaksi</a>
             <a class="collapse-item" href="{{ url('transaksiDetail') }}">transaksi detail</a>
-            <a class="collapse-item" href="{{ url('customer') }}">customer</a>
+            <a class="collapse-item" href="{{ url('customer') }}">customer</a> --}}
 
           </div>
         </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Transaksi;
 use App\Models\Customer;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -29,7 +30,8 @@ class TransaksiController extends Controller
     {
         $customer = Customer::all();
         $transaksi = Transaksi::all();
-        return view('transaksi.create', compact('customer', 'transaksi'));
+        $prod = Produk::all();
+        return view('transaksi.create', compact('customer', 'transaksi', 'prod'));
     }
 
     /**
@@ -40,12 +42,25 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
+        $prod = Produk::find($request->prod_id);
+        // dd($request->all());
+        if($prod->jumlah < $request->jumlah){
+            return redirect()->back()->with('danger', 'barang tidak cukup');
+
+        }
+
         Transaksi::create([
             'customer_id' => $request->customer_id,
             'tanggal' => Carbon::now(),
-            'kode_transaksi' => $request->kode_transaksi
+            'produk' => $request->produk,
+            'kode_transaksi' => $request->kode_transaksi,
+            'jumlah' => $request->jumlah,
+            'harga' => $request->jumlah * $prod->harga
         ]);
 
+        $update = Produk::find($request->prod_id)->update([
+            'jumlah' => $prod->jumlah - $request->jumlah
+        ]);
         return redirect()->route('transaksi.index')->with('success', 'berhasil menambahkan');
     }
 

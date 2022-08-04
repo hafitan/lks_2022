@@ -18,8 +18,6 @@ class CreateCustomerTable extends Migration
             $table->string('nama_lengkap');
             $table->string('no_hp');
             $table->text('alamat_lengkap');
-            $table->text('email');
-            $table->string('password');
             $table->timestamps();
         });
     }

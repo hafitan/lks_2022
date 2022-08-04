@@ -44,10 +44,11 @@ class ProdukController extends Controller
         // dd($request->all());
         $this->validate($request, [
             'image'     => 'required|image|mimes:png,jpg,jpeg',
-            'kategori_id'     => 'required',
+            'kategori'     => 'required',
             'deskripsi'   => 'required',
             'harga'   => 'required',
-            'nama_produk'   => 'required',
+            'jumlah'   => 'required',
+            'produk'   => 'required',
         ]);
 
         //upload image
@@ -57,10 +58,11 @@ class ProdukController extends Controller
 
         $blog = Produk::create([
             'gambar'     => $image->getClientOriginalName(),
-            'kategori_id'     => $request->kategori_id,
+            'kategori'     => $request->kategori,
             'deskripsi'   => $request->deskripsi,
             'harga'   => $request->harga,
-            'nama_produk'   => $request->nama_produk,
+            'jumlah'   => $request->jumlah,
+            'produk'   => $request->produk,
         ]);
 
         if($blog){
@@ -107,10 +109,11 @@ class ProdukController extends Controller
     {
         $this->validate($request, [
             'image'     => 'required|image|mimes:png,jpg,jpeg',
-            'kategori_id'     => 'required',
+            'kategori'     => 'required',
             'deskripsi'   => 'required',
             'harga'   => 'required',
-            'nama_produk'   => 'required',
+            'produk'   => 'required',
+            'jumlah'   => 'required',
         ]);
 
         //upload image
@@ -120,10 +123,11 @@ class ProdukController extends Controller
 
         $blog = $produk->update([
             'gambar'     => $image->getClientOriginalName(),
-            'kategori_id'     => $request->kategori_id,
+            'kategori'     => $request->kategori,
             'deskripsi'   => $request->deskripsi,
             'harga'   => $request->harga,
-            'nama_produk'   => $request->nama_produk,
+            'produk'   => $request->produk,
+            'jumlah'   => $request->jumlah,
         ]);
 
         if($blog){

@@ -68,7 +68,9 @@ class TransaksiDetailController extends Controller
      */
     public function edit(TransaksiDetail $transaksiDetail)
     {
-        //
+        $produk = Produk::all();
+        $transaksi = Transaksi::all();
+        return view('transaksiDetail.edit', compact('produk', 'transaksiDetail', 'transaksi'));
     }
 
     /**
@@ -80,7 +82,13 @@ class TransaksiDetailController extends Controller
      */
     public function update(Request $request, TransaksiDetail $transaksiDetail)
     {
-        //
+        $request->validate([
+            'produk_id' => 'required',
+            'jumlah' => 'required',
+            'transaksi_id' => 'required'
+        ]);
+        $transaksiDetail->update($request->all());
+        return redirect()->route('transaksiDetail.index')->with('success', 'berhasil mengubah data');
     }
 
     /**
@@ -91,6 +99,7 @@ class TransaksiDetailController extends Controller
      */
     public function destroy(TransaksiDetail $transaksiDetail)
     {
-        //
+        $transaksiDetail->delete();
+        return redirect()->route('transaksiDetail.index')->with('success', 'berhasil hapus data');
     }
 }

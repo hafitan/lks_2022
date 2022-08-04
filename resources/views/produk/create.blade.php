@@ -29,18 +29,18 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>produk</strong>
-                <input type="text" name="nama_produk" class="form-control" placeholder="nama_produk">
+                <input type="text" name="produk" class="form-control" placeholder="produk">
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>kategori</strong>
-                {{-- <input type="text" name="kategori" class="form-control" placeholder="nama_produk"> --}}
-                <select name="kategori_id" id="" class="form-control">
+                {{-- <input type="text" name="kategori" class="form-control" placeholder="produk"> --}}
+                <select name="kategori" id="" class="form-control">
                     <option value="">--pilih</option>
                     @foreach ($kategori as $kat)
-                        <option value="{{ $kat->nama_kategori }}">{{ $kat->nama_kategori }}</option>
+                        <option value="{{ $kat->kategori }}">{{ $kat->kategori }}</option>
                     @endforeach
                 </select>
             </div>
@@ -49,7 +49,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>deskripsi</strong>
-                {{-- <input type="text" name="nama_produk" class="form-control" placeholder="nama_produk"> --}}
+                {{-- <input type="text" name="produk" class="form-control" placeholder="produk"> --}}
                 <textarea name="deskripsi" class="form-control" id="" cols="30" rows="10"></textarea>
             </div>
         </div>
@@ -58,6 +58,13 @@
             <div class="form-group">
                 <strong>harga</strong>
                 <input type="number" min=1 name="harga" class="form-control" placeholder="">
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>jumlah</strong>
+                <input type="number" min=1 name="jumlah" class="form-control" placeholder="">
             </div>
         </div>
 

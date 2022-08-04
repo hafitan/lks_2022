@@ -18,6 +18,8 @@ class CreateTransaksiTable extends Migration
             $table->string('customer_id');
             $table->date('tanggal');
             $table->string('kode_transaksi');
+            $table->string('jumlah');
+            $table->string('harga');
             $table->timestamps();
         });
     }

@@ -40,8 +40,6 @@ class CustomerController extends Controller
             'nama_lengkap' => $request->nama_lengkap,
             'no_hp' => $request->no_hp,
             'alamat_lengkap' => $request->alamat_lengkap,
-            'email' => $request->email,
-            'password'  => $request->password
         ]);
         return redirect()->route('customer.index')->with('success', 'berhasil menambahkan');
     }
@@ -81,8 +79,6 @@ class CustomerController extends Controller
             'nama_lengkap' => 'required',
             'no_hp' => 'required',
             'alamat_lengkap' => 'required',
-            'email' => 'required',
-            'password' => 'required',
         ]);
         $customer->update($request->all());
         return redirect()->route('customer.index')->with('success', 'berhasil mengubah data');

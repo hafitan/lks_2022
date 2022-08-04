@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Data customerer</h2>
+            <h2>Data customer</h2>
         </div>
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('customer.create') }}"> Create</a>
@@ -26,8 +26,6 @@
                 <th scope="col">nama lengkap</th>
                 <th scope="col">no hp</th>
                 <th scope="col">alamat lengkap</th>
-                <th scope="col">email</th>
-                <th scope="col">password</th>
                 <th scope="col">opsi</th>
             </tr>
             </thead>
@@ -39,8 +37,6 @@
                     <td>{{ $cus->nama_lengkap }}</td>
                     <td>{{ $cus->no_hp }}</td>
                     <td>{{ $cus->alamat_lengkap }}</td>
-                    <td>{{ $cus->email }}</td>
-                    <td>{{ $cus->password }}</td>
                     <td>
                         <form action="{{ route('customer.destroy',$cus->id) }}" method="POST">
 

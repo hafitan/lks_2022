@@ -32,17 +32,17 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>produk</strong>
-                    <input type="text" name="nama_produk" class="form-control" placeholder="nama produk" value="{{$produk->nama_produk}}" required>
+                    <input type="text" name="produk" class="form-control" placeholder="nama produk" value="{{$produk->produk}}" required>
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>kategori</strong>
-                    <select name="kategori_id" class="form-control" id="" required>
+                    <select name="kategori" class="form-control" id="" required>
                         <option value="">--pilih--</option>
                     @foreach ($kategori as $kat)
-                        <option value="{{ $kat->nama_kategori }}" @if($produk->kategori_id == $kat->nama_kategori)selected @endif>{{ $kat->nama_kategori }}</option>
+                        <option value="{{ $kat->kategori }}" @if($produk->kategori_id == $kat->kategori)selected @endif>{{ $kat->kategori }}</option>
                     @endforeach
                     </select>
                 </div>
@@ -60,6 +60,13 @@
                 <div class="form-group">
                     <strong>harga</strong>
                     <input type="number" min=1 name="harga" class="form-control" placeholder="harga" value="{{$produk->harga}}" required>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>jumlah</strong>
+                    <input type="number" min=1 name="jumlah" class="form-control" placeholder="harga" value="{{$produk->jumlah}}" required>
                 </div>
             </div>
 

@@ -70,7 +70,7 @@
         </div>
     </div>
 </div> --}}
-<div class="container">
+<div class="container text-align-center">
     <div class="row gx-lg-5 align-items-center mb-5">
       <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
         <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
@@ -82,34 +82,17 @@
             @csrf
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" name="email" id="form3Example3" class="form-control" />
+                <input type="email" name="email" id="form3Example3" class="form-control" required />
                 <label class="form-label" for="form3Example3">Email address</label>
               </div>
 
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input type="password" name="password" id="form3Example4" class="form-control" />
+                <input type="password" name="password" id="form3Example4" class="form-control" required />
                 <label class="form-label" for="form3Example4">Password</label>
               </div>
 
-              <!-- Checkbox -->
-              {{-- <div class="form-check d-flex justify-content-center mb-4">
-                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                <label class="form-check-label" for="form2Example33">
-                  Subscribe to our newsletter
-                </label>
-              </div> --}}
-
-              <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                login
-              </button>
-
-              <!-- Register buttons -->
-              <div class="text-center">
-                <p>or sign up with:</p>
-
-              </div>
+              <button type="submit" class="btn btn-primary btn-block mb-4">login</button>
             </form>
           </div>
         </div>

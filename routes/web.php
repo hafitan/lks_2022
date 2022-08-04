@@ -7,6 +7,7 @@ use App\Http\Controllers\TransaksiDetailController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,15 +21,17 @@ use App\Http\Controllers\LogoutController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Auth.login');
 });
-
+Route::group(['middleware' => 'auth'], function(){
 Route::resource('produk', ProdukController::class);
 Route::resource('transaksi', TransaksiController::class);
 Route::resource('transaksiDetail', TransaksiDetailController::class);
 Route::resource('customer', CustomerController::class);
 Route::resource('kategori', KategoriController::class);
 Route::post('logout', LogoutController::class)->name('logout');
+// Route::get('{transaksi}', TransaksiController::class, 'show')->name('transaksi.show');
+});
 
 Auth::routes();
 

@@ -32,7 +32,7 @@
                 @foreach ($kategori as $k)
                 <tr>
                     <td>{{ ++$i }}</td>
-                    <td>{{ $k->nama_kategori }}</td>
+                    <td>{{ $k->kategori }}</td>
                     <td>
                         <form action="{{ route('kategori.destroy',$k->id) }}" method="POST">
 
@@ -41,7 +41,7 @@
                             @csrf
                             @method('DELETE')
 
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('mau hapus {{ $k->nama_kategori }}')">Delete</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('mau hapus {{ $k->kategori }}')">Delete</button>
                         </form>
                     </td>
                 </tr>

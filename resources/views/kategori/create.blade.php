@@ -29,7 +29,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>kategori</strong>
-                <input type="text" name="nama_kategori" class="form-control" placeholder="nama_kategori" required>
+                <input type="text" name="kategori" class="form-control" placeholder="kategori" required>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
